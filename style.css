@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template: 1fr 3.5fr / 1fr 4.5fr;
+}
+
+.sidebar {
+    grid-area: 1 / 1 / span 2 / span 1;
+
+    background-color: #0ea5e9;
+}
+
+.dashboard, .menu-1, .menu-2 {
+    display: grid;
+    grid-template: auto / 1fr 5fr;
+}
+
