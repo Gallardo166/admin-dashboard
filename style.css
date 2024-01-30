@@ -1,21 +1,221 @@
 * {
+    font-family: raleway-medium;
     margin: 0;
     padding: 0;
 }
 
+@font-face {
+    font-family: raleway-medium;
+    src: url(raleway/Raleway-Medium.ttf)
+}
+
 .container {
     display: grid;
-    grid-template: 1fr 3.5fr / 1fr 4.5fr;
+    grid-template: max(130px, 20vh) 80vh / 1fr 6fr;
 }
 
 .sidebar {
     grid-area: 1 / 1 / span 2 / span 1;
 
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    padding: 16px;
+    min-width: 160px;
+
     background-color: #0ea5e9;
 }
 
 .dashboard, .menu-1, .menu-2 {
+    color: white;
     display: grid;
-    grid-template: auto / 1fr 5fr;
+    grid-template: auto / 24px 100px;
+    align-items: center;
+    gap: 8px;
 }
 
+.menu-1 button, .menu-2 button {
+    appearance: none;
+    border: none;
+    background-color: #0ea5e9;
+    font-size: 1rem;
+    text-align: left;
+    color: white;
+}
+
+button:hover {
+    cursor:pointer;
+}
+
+.dashboard h1 {
+    font-size: 1.4rem;
+}
+
+.sidebar img {
+    filter: invert(96%) sepia(0%) saturate(7500%) hue-rotate(82deg) brightness(105%) contrast(107%);
+}
+
+img {
+    width: 20px;
+}
+
+.logo {
+    width: 1.8rem;
+}
+
+.header {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 26px;
+}
+
+
+.header-top .username, .header-bottom .greeting h3 {
+    text-wrap: nowrap;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+.header-top input {
+    appearance: none;
+    border: none;
+    min-width: 10px;
+    flex: 0 1 420px;
+    height: 26px;
+    background-color: rgb(235, 227, 227);
+    border-radius: 19px;
+
+    padding: 8px;
+    font-size: 0.8rem;
+}
+
+.empty {
+    min-width: 10px;
+    flex: 1;
+}
+
+img[alt="Profile Picture"] {
+    clip-path: circle();
+}
+
+.header-top img[alt="Profile Picture"] {
+    width: 32px;
+    height: 32px;
+}
+
+.header-bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 2px 26px 12px;
+}
+
+.header-bottom img[alt="Profile Picture"] {
+    width: 48px;
+    height: 48px;
+}
+
+.header-bottom button {
+    appearance: none;
+    border: none;
+    background-color:#0ea5e9;
+    padding: 8px;
+    width: 64px;
+    border-radius: 20px;
+    color: white;
+}
+
+.content {
+    background-color: #d1d5db;
+    
+    grid: 2 / 2 / 3 / 3;
+    display: grid;
+    grid-template: auto / 3fr 1fr;
+
+    overflow-y: scroll;
+}
+
+.projects-section {
+    grid-area: 1 / 1 / span 1 / span 1;
+    padding: 28px;
+}
+
+.your-projects-title, .announcements-title, .trending-title {
+    margin-bottom: 12px;
+}
+
+.cards {
+    display: grid;
+    grid-template: repeat(1, 1fr) / repeat(auto-fit, minmax(260px, 1fr));
+    column-gap: 26px;
+    row-gap: 24px;
+}
+
+.card {
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 7px;
+
+    padding: 14px;
+}
+
+.card .card-icons {
+    align-self: flex-end;
+}
+
+.information {
+    grid-area: 1 / 2 / span 1 / span 1;
+    align-self: stretch;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 28px 28px 28px 0px;
+}
+
+.announcements-section, .trending-section {
+    max-width: 240px;
+    min-width: 180px;
+}
+
+.announcements, .trending {
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 7px;
+    padding: 14px;
+}
+
+.announcements p {
+    font-size: 0.7rem;
+    padding: 8px 0px;
+    min-width: 30ch;
+}
+
+.announcements hr {
+    margin-bottom: 8px;
+}
+
+.information .empty {
+    min-height: 30px;
+    max-height: 52px;
+}
+
+.trending img {
+    width: 32px;
+    height: 32px;
+}
